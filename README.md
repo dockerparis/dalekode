@@ -37,7 +37,7 @@ mounted has a volume inside the container.
 The web app should now be listening on port 3000 on your docker daemon (if you
 are  using boot2docker, `boot2docker ip` will tell you its address).
 
-You can also run Grounds in production mode:
+You can also run Swaggy in production mode:
 
     RAILS_ENV=production make run
 
