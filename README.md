@@ -36,10 +36,3 @@ mounted has a volume inside the container.
 
 The web app should now be listening on port 3000 on your docker daemon (if you
 are  using boot2docker, `boot2docker ip` will tell you its address).
-
-You can also run Swaggy in production mode:
-
-    RAILS_ENV=production make run
-
->When running in production mode, a default secret key is set as convenience,
-but this should be changed in production by specifying `SECRET_KEY_BASE`.

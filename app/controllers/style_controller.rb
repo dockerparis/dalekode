@@ -4,7 +4,10 @@ class StyleController < ApplicationController
     @style = Style.new(params[:style])
     @style.check
 
-    output = @style.output.encode('utf-8', :invalid => :replace, :undef => :replace, :replace => '_')
-    render json: { html: output.html_safe }
+    if @style.valid?
+      render json: { html: @style.format }
+    else
+      render json: { error: @style.output }, status: 500
+    end
   end
 end
