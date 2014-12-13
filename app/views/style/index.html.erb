@@ -1,0 +1,25 @@
+<div class="well page" id="input">
+  <h1 class="header"></h1>
+  <div class="inputs">
+    <h2><%= t('style.heading') %></h2>
+    <div class="input-group">
+      <%= form_for(Style.new, url: style_check_path, method: :post, remote: :true) do |f| %>
+      <%= f.text_field :repository, class: 'form-control',
+        placeholder: t('style.repository') %>
+      <%= f.hidden_field :language, value: 'ruby' %>
+      <% end %>
+      <span class="input-group-btn">
+        <%= button_tag(type: 'button', class: 'btn btn-fab btn-raised btn-material-indigo') do %>
+          <i class="mdi-content-send"></i>
+        <% end %>
+      </span>
+    </div>
+  </div>
+</div>
+
+<blockquote>
+    <p><i class="mdi-editor-format-quote"></i> I tried some linters once, then I took an arrow in the knee.</p>
+    <small>Jean-Claude Van Damme</small>
+</blockquote>
+
+<div id="output"></div>
