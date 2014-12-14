@@ -9,3 +9,19 @@
 .progress {
   height: 50px;
 }
+
+#tips, #tips li{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+#tips{
+  width:250px;
+  font-size:16px;
+  line-height:120%;
+}
+#tips li{
+  padding:20px;
+  background:#e1e1e1;
+  display:none; /* hide the items at first only */
+}
