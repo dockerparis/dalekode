@@ -4,13 +4,13 @@
     <h2><%= t('style.heading') %></h2>
     <div class="input-group col-md-11">
       <%= form_for(Style.new, url: style_check_path, method: :post, remote: :true) do |f| %>
-        <%= f.text_field :repository, class: 'form-control', placeholder: t('style.repository') %>
-        <%= f.hidden_field :language, value: 'ruby' %>
-        <span class="input-group-btn">
-          <%= button_tag(type: 'submit', class: 'btn btn-fab btn-raised btn-material-indigo', data: { disable_with: "..." }) do %>
-            <i class="mdi-content-send"></i>
-          <% end %>
-        </span>
+      <%= f.text_field :repository, class: 'form-control', placeholder: t('style.repository') %>
+      <%= f.hidden_field :language, value: 'ruby' %>
+      <span class="input-group-btn">
+        <%= button_tag(type: 'submit', class: 'btn btn-fab btn-raised btn-material-indigo pull-right', data: { disable_with: "..." }) do %>
+        <i class="mdi-content-send"></i>
+        <% end %>
+      </span>
       <% end %>
     </div>
   </div>
@@ -24,6 +24,9 @@
 <div id="errorBox" class="alert alert-dismissable alert-danger">
   <button type="button" class="close" data-dismiss="alert">×</button>
   <strong>Oh snap!</strong> <div id="error"></div>
+</div>
+<div id="loadingBlock" class="progress progress-striped">
+  <div id="loadingBar" class="progress-bar progress-bar-indigo"></div>
 </div>
 
 <div id="output"></div>
