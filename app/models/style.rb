@@ -15,7 +15,7 @@ class Style
   def check
     begin
       container = Docker::Container.create('Cmd' => [@repository],
-                                           'Image' => "#{docker_repository}/#{@language}",
+                                           'Image' => "#{docker_repository}/linter-#{@language}",
                                            'Tty' => true)
       container.start
       @status = container.wait(30)['StatusCode'] || -1

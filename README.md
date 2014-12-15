@@ -1,10 +1,11 @@
 # Swaggy
 
+[Live preview](http://swaggy.herokuapp.com/)
+
 Is your code swag enough?
 
 With Swaggy, you can check code style on your favorite GitHub repositories!
 
-[Live preview](http://swaggy.herokuapp.com/)
 
 ## Prerequisite
 
