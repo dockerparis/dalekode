@@ -6,7 +6,7 @@
       <%= form_for(Style.new, url: style_check_path, method: :post, remote: :true) do |f| %>
       <%= f.text_field :repository, class: 'form-control', placeholder: t('style.repository') %>
       <label for="select" style="font-size:16px">Language</label>
-      <%= f.select :language, [['Ruby','ruby'],['Go','go']], {}, { class: 'form-control' } %>
+      <%= f.select :language, [['Ruby','ruby'],['Javascript','javascript']], {}, { class: 'form-control' } %>
       <span class="input-group-btn">
         <%= button_tag(type: 'submit', class: 'btn btn-fab btn-raised btn-material-indigo pull-right', data: { disable_with: "..." }) do %>
         <i class="mdi-content-send"></i>
