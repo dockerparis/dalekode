@@ -33,7 +33,7 @@ COPY Gemfile $APP/Gemfile
 COPY Gemfile.lock $APP/Gemfile.lock
 
 # Install ruby gems.
-RUN cd $APP && bundle install
+RUN cd $APP && bundle install --without production
 
 # Everything up to here was cached. This includes
 # the bundle install, unless the Gemfiles changed.

@@ -4,13 +4,15 @@ Is your code swag enough?
 
 With Swaggy, you can check code style on your favorite GitHub repositories!
 
+[Live preview](http://swaggy.herokuapp.com/)
+
 ## Prerequisite
 
 ### Build linter images
 
     make images
 
-The first build takes a lot of time. If you want you can also pull official
+If you want you can also pull official
 images:
 
     make images-pull

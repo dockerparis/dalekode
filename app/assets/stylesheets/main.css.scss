@@ -6,6 +6,10 @@
   font-size: 15px;
 }
 
+#sources-link li, a {
+  font-size: 15px;
+}
+
 .progress {
   height: 50px;
 }
@@ -24,4 +28,12 @@
   padding:20px;
   background:#e1e1e1;
   display:none; /* hide the items at first only */
+}
+
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
 }

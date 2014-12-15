@@ -19,6 +19,7 @@ class Style
                                            'Tty' => true)
       container.start
       @status = container.wait(30)['StatusCode'] || -1
+      @status = @status - 256 if @status >= 128
       @output = container.logs(stdout: true)
       container.delete(force: :true)
     rescue

@@ -5,7 +5,8 @@
     <div class="input-group col-md-11">
       <%= form_for(Style.new, url: style_check_path, method: :post, remote: :true) do |f| %>
       <%= f.text_field :repository, class: 'form-control', placeholder: t('style.repository') %>
-      <%= f.hidden_field :language, value: 'ruby' %>
+      <label for="select" style="font-size:16px">Language</label>
+      <%= f.select :language, [['Ruby','ruby'],['Go','go']], {}, { class: 'form-control' } %>
       <span class="input-group-btn">
         <%= button_tag(type: 'submit', class: 'btn btn-fab btn-raised btn-material-indigo pull-right', data: { disable_with: "..." }) do %>
         <i class="mdi-content-send"></i>
@@ -33,9 +34,10 @@
     <li>Loading the swag...</li>
     <li>Fetching the unicorns...</li>
     <li>Making an epic split...</li>
-    <li>What a mess !</li>
-    <li>Did you even RTFM ?</li>
+    <li>What a mess!</li>
+    <li>Did you even RTFM?</li>
+    <li>It stinks!</li>
   </ul>
 <center>
 
-    <div id="output"></div>
+<div id="output"></div>

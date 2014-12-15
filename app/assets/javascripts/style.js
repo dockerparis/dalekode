@@ -7,13 +7,18 @@ function styleChecker() {
     $('#errorBox').hide();
     $('#loadingBlock').hide();
 
+    var loading = null;
     $('#new_style').on('submit', function() {
         $('#output').empty();
         $('#errorBox').hide();
-        $('#loadingBlock').show();
-        progressLoad();
+        loading = progressLoad();
 
     }).on('ajax:complete', function(xhr, status) {
+        if (loading) {
+            clearInterval(loading);
+            loading = null;
+        }
+
         var response = status.responseJSON;
         if (status.status == 200) {
             $('#output').html(response.html);
@@ -32,31 +37,28 @@ function styleChecker() {
 $(document).ready(styleChecker);
 $(document).on('page:load', styleChecker);
 
-function progressLoad()
-{
+function progressLoad() {
   var progressBar = $('#loadingBar'),
-  width = 0;
+      width = 0;
 
   progressBar.width(width);
 
-  var interval = setInterval(function() {
-
-    width += 10;
+  $('#loadingBlock').show();
+  return setInterval(function() {
+    if (width >= 100)
+        width = 0;
+    else
+        width += 10;
 
     progressBar.css('width', width + '%');
     showTips();
-    if (width >= 100) {
-      clearInterval(interval);
-    }
-  }, 1000)
+  }, 1000);
 }
 
-function showTips()
-{
+function showTips() {
   var ran = temp + 1;
   temp = ran;
-  if ($("#loadingBar").is(":visible"))
-  {
+  if ($("#loadingBar").is(":visible")){
     $("#tips li").hide();
     $("#tips li:nth-child(" + ran + ")").fadeIn("fast");
   }

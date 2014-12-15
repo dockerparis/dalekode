@@ -2,21 +2,28 @@
   <h1 class="header"></h1>
   <div class="inputs">
     <%= title t('site.about') %>
+    <center>
     <div class="row content-row">
-      <p>Swaggy uses Rubocop to analyse your Ruby code.</p>
+      <p>This project was made for the <b>Docker Tour de France 2014</b> hackaton.</p>
     </div>
     <div class="row content-row">
-      <h2>The Team:</h2>
+      <h2>Team</h2>
       <center>
-        <div class="col-sm-6">
+        <hr>
+        <div class="col-sm-4">
           <%= gravatar_tag('exadeci@gmail.com', alt: 'Gaetan Gueraud', class: 'shadow-z-2') %>
           <h3>Gaëtan Gueraud</h3>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
           <%= gravatar_tag('folie.adrien@gmail.com', alt: 'Adrien Folie', class: 'shadow-z-2') %>
           <h3>Adrien Folie</h3>
         </div>
+        <div class="col-sm-4">
+          <%= gravatar_tag('groux.forster@gmail.com', alt: ' Forster Groux', class: 'shadow-z-2') %>
+          <h3>Forster Groux</h3>
+        </div>
       </center>
     </div>
+  </center>
   </div>
 </div>
